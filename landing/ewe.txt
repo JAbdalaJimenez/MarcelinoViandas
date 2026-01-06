@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcelino Viandas - Comidas Caseras Santiago del Estero</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #1a472a;
+    --secondary: #8b7355;
+    --accent: #c9a961;
+    --dark: #0f1419;
+    --light: #f9f7f4;
+    --text: #2a2a2a;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background: white;
+}
+
+/* HEADER */
+header {
+    background: white;
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.header-top {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+.header-contact a {
+    color: var(--primary);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.header-contact a:hover {
+    color: var(--accent);
+}
+
+.language {
+    color: #999;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 50px;
+}
+
+nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.cta-btn {
+    background: var(--primary);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 0;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-btn:hover {
+    background: var(--accent);
+    color: var(--dark);
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f5f3f0 0%, white 100%);
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 40px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    color: var(--text);
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.hero-features {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.feature {
+    text-align: center;
+    flex: 1;
+    max-width: 150px;
+}
+
+.feature-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+    color: var(--primary);
+    line-height: 1;
+}
+
+.feature h3 {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text);
+}
+
+/* SECCIÓN PRESENTACIÓN */
+.presentacion {
+    padding: 100px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.presentacion-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.presentacion h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    color: var(--text);
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.presentacion-text p {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.9;
+    font-weight: 300;
+}
+
+.presentacion-image {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    height: 550px;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    background-image: url('data:../assets/marcelino.png"><image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" x="0" y="0" width="400" height="300"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+/* SECCIÓN FUNDADOR */
+.fundador {
+    background: var(--dark);
+    color: white;
+    padding: 100px 40px;
+}
+
+.fundador-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.fundador-label {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.fundador h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.fundador p {
+    color: #d0d0d0;
+    margin-bottom: 25px;
+    line-height: 1.9;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.fundador-image {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* SECCIÓN MENÚS */
+.menus {
+    padding: 100px 40px;
+    background: var(--light);
+}
+
+.menus-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: var(--text);
+    margin-bottom: 60px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.menu-item {
+    background: white;
+    padding: 40px;
+    text-align: center;
+    transition: all 0.4s ease;
+    border-top: 3px solid var(--primary);
+}
+
+.menu-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.menu-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    line-height: 1;
+    color: var(--primary);
+}
+
+.menu-item h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--text);
+}
+
+.menu-item p {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.menu-btn {
+    background: var(--primary);
+    color: white;
+    padding: 10px 28px;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-btn:hover {
+    background: var(--accent);
+    color: var(--dark);
+}
+
+/* SECCIÓN CONTACTO */
+.contacto {
+    padding: 100px 40px;
+    background: white;
+}
+
+.contacto-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.contacto-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.contacto-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: var(--text);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.contacto-header p {
+    font-size: 15px;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.info-card {
+    padding: 40px;
+    background: var(--light);
+    text-align: center;
+    transition: all 0.4s ease;
+    border-bottom: 3px solid var(--primary);
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+}
+
+.info-card h3 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.info-card p {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.info-card a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.info-card a:hover {
+    color: var(--accent);
+}
+
+/* FOOTER */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 60px 40px;
+    text-align: center;
+    border-top: 1px solid rgba(201, 169, 97, 0.2);
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+footer p {
+    font-size: 13px;
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+footer strong {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.footer-credit {
+    margin-top: 30px;
+    font-size: 12px;
+    color: #888;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .presentacion-header,
+    .fundador-content,
+    .contacto-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    nav ul {
+        gap: 30px;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    .header-top {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    nav ul {
+        gap: 20px;
+        font-size: 10px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero-features {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .presentacion,
+    .menus,
+    .contacto {
+        padding: 60px 20px;
+    }
+
+    .presentacion h2,
+    .section-title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fundador h2 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        display: none;
+    }
+
+    .header-contact {
+        font-size: 11px;
+    }
+
+    .header-contact a {
+        margin-left: 12px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+}
+
+/* LOGO STYLES */
+.presentacion-image img {
+    max-width: 80%;
+    max-height: 80%;
+    width: auto;
+    height: auto;
+    background: transparent;
+}
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-top">
+            <span class="language">ES</span>
+            <div class="header-contact">
+                <a href="https://wa.me/+5493853020273">☎ +54 9 3853020273</a>
+                <a href="marcelimo.sdo@gmail.com">✉ marcelimo.sdo@gmail.com</a>
+            </div>
+        </div>
+        <nav>
+            <div class="logo">MARCELINO</div>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#menus">Menús</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <a href="https://wa.me/+5493853020273" class="cta-btn">Reservar</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Somos Calidad, Somos Sabor, Somos Tradición</h1>
+            <p>Marcelino es una casa de viandas caseras que respeta la tradición de la cocina argentina, rindiendo un orgulloso tributo a la gastronomía familiar y auténtica de Santiago del Estero.</p>
+            
+            <div class="hero-features">
+                <div class="feature">
+                    <div class="feature-icon">♨</div>
+                    <h3>Recetas</h3>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✦</div>
+                    <h3>Ingredientes</h3>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Rapidez</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRESENTACIÓN -->
+    <section class="presentacion" id="nosotros">
+        <div class="presentacion-header">
+            <div class="presentacion-text">
+                <h2>Viandas</h2>
+                <p>Con 2 años de trayectoria en Santiago del Estero, Marcelino se ha consolidado como la opción confiable para disfrutar de comidas caseras sabrosas y de calidad. Cada plato es preparado con dedicación, usando ingredientes frescos y seleccionados.</p>
+                <p>Todo el recorrido que vivencian nuestros clientes, desde que realizan su pedido hasta que lo disfrutan, está pensado para despertar sus sentidos, donde los aromas y sabores del lugar los hacen vivir una experiencia gastronómica única e inigualable.</p>
+            </div>
+            <div class="presentacion-image">
+                <img src="../assets/marcelino.png" alt="Marcelino Logo" style="max-width: 80%; height: auto;">
+            </div>
+        </div>
+    </section>
+
+    <!-- FUNDADOR -->
+    <section class="fundador">
+        <div class="fundador-content">
+            <div>
+                <div class="fundador-label">Amor & comida</div>
+                <h2>Marcelino</h2>
+                <p>Cocinera y dueña, se animó a soñar Marcelino hace 2 años atrás y hacerla realidad. Su amor por la gastronomía y el respeto por la tradición lo llevaron a crear un nuevo concepto en viandas caseras, con la comida argentina como su producto central.</p>
+                <p>Cada vianda es un reflejo del compromiso con la calidad y el sabor auténtico de la cocina casera, donde cada ingrediente es seleccionado con cuidado y cada receta es preparada con dedicación familiar.</p>
+            </div>
+            <div class="fundador-image">
+                Marcelino - Fundador
+            </div>
+        </div>
+    </section>
+
+    <!-- MENÚS -->
+    <section class="menus" id="menus">
+        <div class="menus-content">
+            <h2 class="section-title">Nuestros Menús</h2>
+            
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-icon">♨</div>
+                    <h3>Menú Diario</h3>
+                    <p>Platos variados que cambian diariamente. Consomé, entrada, plato principal y postre seleccionado.</p>
+                    <a href="https://wa.me/+5493853020273" class="menu-btn">Consultar</a>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-icon">🥂</div>
+                    <h3>Menú Especial</h3>
+                    <p>Opciones premium para eventos, reuniones y celebraciones especiales con servicio personalizado.</p>
+                    <a href="https://wa.me/+5493853020273" class="menu-btn">Consultar</a>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-icon">◈</div>
+                    <h3>Viandas Premium</h3>
+                    <p>Selección de carnes, pastas y especialidades caseras preparadas al momento con ingredientes premium.</p>
+                    <a href="https://wa.me/+5493853020273" class="menu-btn">Pedir</a>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-icon">❖</div>
+                    <h3>Ensaladas Frescas</h3>
+                    <p>Ensaladas saludables preparadas al momento, perfectas para dietas equilibradas y saludables.</p>
+                    <a href="https://wa.me/+5493853020273" class="menu-btn">Pedir</a>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-icon">🍝</div>
+                    <h3>Pastas Caseras</h3>
+                    <p>Pastas frescas con salsas tradicionales, hechas con ingredientes seleccionados y recetas auténticas.</p>
+                    <a href="https://wa.me/+5493853020273" class="menu-btn">Pedir</a>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-icon">🥩</div>
+                    <h3>Carnes Variadas</h3>
+                    <p>Carnes tiernas preparadas de diferentes formas. Sabor y calidad garantizada en cada porción.</p>
+                    <a href="https://wa.me/+5493853020273" class="menu-btn">Pedir</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contacto" id="contacto">
+        <div class="contacto-content">
+            <div class="contacto-header">
+                <h2>Ubicación y Contacto</h2>
+                <p>Encuentra Marcelino en Santiago del Estero. Contáctanos para realizar tu pedido o consultas especiales.</p>
+            </div>
+
+            <div class="contacto-grid">
+                <div class="info-card">
+                    <h3>📍 Casa Principal</h3>
+                    <p>Santiago del Estero</p>
+                    <p>Centro - La Banda</p>
+                    <p>Argentina</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>📞 WhatsApp</h3>
+                    <p><a href="https://wa.me/+5493853020273">(+54 9) 38530202730</a></p>
+                    <p>Disponible 24/7</p>
+                    <p>Respuesta garantizada</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>⌚ Horarios</h3>
+                    <p>Lunes a Viernes</p>
+                    <p>11:00 - 14:00 hs</p>
+                    <p>18:00 - 22:00 hs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <p><strong>MARCELINO VIANDAS</strong> - Comidas Caseras de Calidad</p>
+            <p>Santiago del Estero - La Banda - Argentina</p>
+            <p class="footer-credit">© Copyright 2025. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
