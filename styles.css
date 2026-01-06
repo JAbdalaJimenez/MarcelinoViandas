@@ -1,3 +1,5 @@
+/* Copia TODO este código y reemplaza tu archivo styles.css completo */
+
 * {
     margin: 0;
     padding: 0;
@@ -356,6 +358,7 @@ nav a:hover::after {
     text-align: center;
     transition: all 0.4s ease;
     border-top: 3px solid var(--primary);
+    border-radius: 8px;
 }
 
 .menu-item:hover {
@@ -398,6 +401,7 @@ nav a:hover::after {
     display: inline-block;
     border: none;
     cursor: pointer;
+    border-radius: 4px;
 }
 
 .menu-btn:hover {
@@ -449,10 +453,12 @@ nav a:hover::after {
     text-align: center;
     transition: all 0.4s ease;
     border-bottom: 3px solid var(--primary);
+    border-radius: 8px;
 }
 
 .info-card:hover {
     transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
 }
 
 .info-card h3 {
@@ -512,7 +518,7 @@ footer strong {
     color: #888;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE - TABLET (1024px) */
 @media (max-width: 1024px) {
     .presentacion-header,
     .fundador-content,
@@ -528,8 +534,17 @@ footer strong {
     .menu-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .fundador-image {
+        height: 350px;
+        width: 350px;
+        margin-left: 0;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
 }
 
+/* RESPONSIVE - TABLET PEQUEÑO (768px) */
 @media (max-width: 768px) {
     header {
         padding: 15px 20px;
@@ -537,75 +552,443 @@ footer strong {
 
     .header-top {
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
         margin-bottom: 15px;
+        font-size: 11px;
+    }
+
+    .header-contact a {
+        margin-left: 15px;
     }
 
     nav ul {
-        gap: 20px;
+        gap: 15px;
         font-size: 10px;
     }
 
+    .logo {
+        font-size: 24px;
+    }
+
+    .cta-btn {
+        padding: 10px 20px;
+        font-size: 10px;
+    }
+
+    .hero {
+        height: 80vh;
+    }
+
+    .hero-content {
+        padding: 0 30px;
+    }
+
     .hero h1 {
-        font-size: 42px;
+        font-size: 48px;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 16px;
+        margin-bottom: 30px;
     }
 
     .hero-features {
-        flex-direction: column;
-        gap: 30px;
+        gap: 40px;
+        margin-top: 40px;
     }
 
-    .presentacion,
-    .menus,
-    .contacto {
-        padding: 60px 20px;
+    .feature-icon {
+        font-size: 36px;
+        margin-bottom: 12px;
     }
 
-    .presentacion h2,
+    .feature h3 {
+        font-size: 11px;
+    }
+
+    .presentacion {
+        padding: 60px 25px;
+    }
+
+    .presentacion-header {
+        gap: 40px;
+        margin-bottom: 50px;
+    }
+
+    .presentacion h2 {
+        font-size: 42px;
+        margin-bottom: 15px;
+    }
+
+    .presentacion-text p {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .presentacion-image {
+        height: 350px;
+    }
+
+    .fundador {
+        padding: 60px 25px;
+    }
+
+    .fundador-label {
+        font-size: 11px;
+        margin-bottom: 12px;
+    }
+
+    .fundador h2 {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    .fundador p {
+        font-size: 14px;
+        margin-bottom: 18px;
+    }
+
+    .fundador-image {
+        height: 280px;
+        width: 280px;
+        margin: 0 auto;
+        margin-top: 20px;
+        border-radius: 8px;
+    }
+
+    .menus {
+        padding: 60px 25px;
+    }
+
+    .menus-content {
+        margin: 0 auto;
+    }
+
     .section-title {
-        font-size: 32px;
+        font-size: 40px;
         margin-bottom: 40px;
     }
 
     .menu-grid {
         grid-template-columns: 1fr;
+        gap: 25px;
     }
 
-    .fundador h2 {
-        font-size: 36px;
+    .menu-item {
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     }
 
-    .fundador-image {
-        height: 250px;
-        width: 250px;
-        margin: 0 auto;
+    .menu-icon {
+        font-size: 44px;
+        margin-bottom: 15px;
+    }
+
+    .menu-item h3 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .menu-item p {
+        font-size: 13px;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+
+    .menu-btn {
+        padding: 9px 24px;
+        font-size: 10px;
+    }
+
+    .contacto {
+        padding: 60px 25px;
+    }
+
+    .contacto-header {
+        margin-bottom: 50px;
+    }
+
+    .contacto-header h2 {
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+
+    .contacto-header p {
+        font-size: 14px;
+    }
+
+    .contacto-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-top: 40px;
+    }
+
+    .info-card {
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .info-card h3 {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+
+    .info-card p {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+
+    footer {
+        padding: 40px 25px;
+    }
+
+    footer p {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
+    .footer-credit {
+        margin-top: 20px;
+        font-size: 11px;
     }
 }
 
+/* RESPONSIVE - MÓVIL (480px) */
 @media (max-width: 480px) {
+    header {
+        padding: 12px 15px;
+    }
+
+    .header-top {
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 12px;
+        font-size: 10px;
+    }
+
+    .header-contact a {
+        margin-left: 10px;
+        font-size: 9px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+
     nav ul {
         display: none;
     }
 
-    .header-contact {
-        font-size: 11px;
+    .logo {
+        font-size: 20px;
+        letter-spacing: 1px;
     }
 
-    .header-contact a {
-        margin-left: 12px;
+    .cta-btn {
+        padding: 8px 16px;
+        font-size: 9px;
+    }
+
+    .hero {
+        height: 70vh;
+        padding-bottom: 40px;
+    }
+
+    .hero-content {
+        padding: 0 20px;
     }
 
     .hero h1 {
-        font-size: 28px;
+        font-size: 32px;
+        margin-bottom: 12px;
+        line-height: 1.3;
     }
 
-    .section-title {
-        font-size: 26px;
+    .hero p {
+        font-size: 14px;
+        margin-bottom: 25px;
+        line-height: 1.7;
+    }
+
+    .hero-features {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .feature {
+        max-width: 100%;
+    }
+
+    .feature-icon {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .feature h3 {
+        font-size: 10px;
+    }
+
+    .presentacion {
+        padding: 40px 18px;
+    }
+
+    .presentacion-header {
+        gap: 25px;
+        margin-bottom: 30px;
+    }
+
+    .presentacion h2 {
+        font-size: 32px;
+        margin-bottom: 12px;
+        line-height: 1.3;
+    }
+
+    .presentacion-text p {
+        font-size: 13px;
+        margin-bottom: 12px;
+        line-height: 1.6;
+    }
+
+    .presentacion-image {
+        height: 250px;
+    }
+
+    .fundador {
+        padding: 40px 18px;
+    }
+
+    .fundador-label {
+        font-size: 10px;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+    }
+
+    .fundador h2 {
+        font-size: 32px;
+        margin-bottom: 15px;
+        line-height: 1.3;
+    }
+
+    .fundador p {
+        font-size: 13px;
+        margin-bottom: 12px;
+        line-height: 1.6;
+        color: #d0d0d0;
     }
 
     .fundador-image {
-        height: 200px;
-        width: 200px;
-        margin: 0 auto;
+        height: 220px;
+        width: 220px;
+        margin: 20px auto 0;
+        border-radius: 8px;
+    }
+
+    .menus {
+        padding: 40px 18px;
+    }
+
+    .section-title {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .menu-item {
+        padding: 25px;
+        border-radius: 10px;
+        border-top: 3px solid var(--primary);
+        box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .menu-icon {
+        font-size: 40px;
+        margin-bottom: 12px;
+    }
+
+    .menu-item h3 {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    .menu-item p {
+        font-size: 12px;
+        margin-bottom: 18px;
+        line-height: 1.6;
+    }
+
+    .menu-btn {
+        padding: 8px 20px;
+        font-size: 9px;
+        border-radius: 4px;
+    }
+
+    .contacto {
+        padding: 40px 18px;
+    }
+
+    .contacto-header {
+        margin-bottom: 35px;
+    }
+
+    .contacto-header h2 {
+        font-size: 30px;
+        margin-bottom: 12px;
+        line-height: 1.3;
+    }
+
+    .contacto-header p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .contacto-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-top: 30px;
+    }
+
+    .info-card {
+        padding: 25px;
+        border-radius: 10px;
+        border-bottom: 3px solid var(--primary);
+        box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .info-card h3 {
+        font-size: 12px;
+        margin-bottom: 12px;
+        letter-spacing: 0.5px;
+    }
+
+    .info-card p {
+        font-size: 12px;
+        margin-bottom: 6px;
+        line-height: 1.5;
+    }
+
+    .info-card a {
+        font-size: 12px;
+    }
+
+    footer {
+        padding: 30px 18px;
+    }
+
+    footer p {
+        font-size: 11px;
+        margin-bottom: 10px;
+    }
+
+    .footer-credit {
+        margin-top: 15px;
+        font-size: 10px;
     }
 }
